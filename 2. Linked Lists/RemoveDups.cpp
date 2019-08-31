@@ -1,3 +1,5 @@
+// Time Complexity: O(n)
+// Space Complexity: O(n)
 void deleteDups(node *head) {
 	set<int> s;
 	node *prev = NULL;
