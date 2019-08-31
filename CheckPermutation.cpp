@@ -18,8 +18,6 @@ int main(void) {
 
 
 
-
-
 // Another Method
 #include <bits/stdc++.h>
 using namespace std;
