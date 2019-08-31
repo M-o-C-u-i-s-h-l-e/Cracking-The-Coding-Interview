@@ -72,12 +72,6 @@ void setZero(vector<vector<int>> &v) {
 		for (int j = 1; j < v[0].size(); j++)
 			if (v[i][j] == 0)
 				v[i][0] = 0, v[0][j] = 0;
-	for (vector<int> i : v) {
-		for (int j : i)
-			cout << j << ' ';
-		cout << endl;
-	}
-	cout << endl;
 	for (int i = 1; i < v.size(); i++)
 		if (v[i][0] == 0)
 			nullifyRow(v, i);
