@@ -13,3 +13,24 @@ void deleteDups(node *head) {
 		head = head.next;
 	}
 }
+
+
+
+
+
+// Another Method
+// Time Complextiy: O(n ^ 2)
+// Space Complextiy: O(1)
+void deleteDups(node *head) {
+	while (head != NULL) {
+		node *prev = head;
+		while (prev->next != NULL) {
+			if (prev->next->data == head->data) {
+				prev->next = prev->next->next;
+			} else {
+				prev = prev->next;
+			}
+		}
+		head = head->next;
+	}
+}
