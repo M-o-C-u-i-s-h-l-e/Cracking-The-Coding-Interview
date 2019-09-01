@@ -25,3 +25,29 @@ bool palindrome(node *n) {
 	node *rev = reverse(n);
 	return isEqual(n, rev);
 }
+
+
+
+
+
+// Another Method
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+bool palindrome(node *n) {
+	stack<int> st;
+	node *slow = n, *fast = n;
+	while (fast != NULL && fast->next != NULL) {
+		st.push(slow->data);
+		slow = slow->next;
+		fast = fast->next->next;
+	}
+	if (fast != NULL)
+		slow = slow->next;
+	while (slow != NULL) {
+		if (st.top() != slow->data)
+			return false;
+		st.pop();
+		slow = slow->next;
+	}
+	return true;
+}
