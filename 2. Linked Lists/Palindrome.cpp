@@ -84,7 +84,7 @@ Result *isPalindrome(node *n, int len) {
 	if (len == 1)
 		return new Result(n->next, true);
 	Result *res = isPalindrome(n->next, len - 2);
-	if (!res.result || res.node == NULL)
+	if (!res.result || res->n == NULL)
 		return res;
 	res->result = (n->data == res->n->data);
 	res->n = res->n->next;
